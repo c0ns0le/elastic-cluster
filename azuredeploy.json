@@ -72,7 +72,7 @@
     "numberOfNodes": 5,
     "scriptBaseUrl": "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/elasticsearch-centos-3node/",
     //"scriptBaseUrl": "C:/scripts",
-    "elasticScript": "elasticinstall.py",
+    "elasticScript": "bash install_elastic.sh",
     "jumpboxScript": "prep-jumpbox.ps1",
     "installScripts": [
       "[concat(variables('scriptBaseUrl'), variables('elasticScript'))]",
@@ -292,8 +292,10 @@
           "typeHandlerVersion": "1.3",
           "settings": {
             "fileUris": "[variables('installScripts')]",
-            "commandToExecute": "[concat('python ',variables('elasticScript'), ' ', variables('clusterName'), ' ', variables('numberOfNodes'), ' ', variables('storageName'), ' ', listKeys(resourceId('Microsoft.Storage/storageAccounts',variables('storageName')) ,variables('apiVersion')).key1)]"
-          }
+            //"commandToExecute": "[concat('python ',variables('elasticScript'), ' ', variables('clusterName'), ' ', variables('numberOfNodes'), ' ', variables('storageName'), ' ', listKeys(resourceId('Microsoft.Storage/storageAccounts',variables('storageName')) ,variables('apiVersion')).key1)]"
+            "commandToExecute": "[variables('elasticScript')]"
+          
+		  }
         }
       },    
 	  {

@@ -1,0 +1,14 @@
+cluster.name: elastic-test
+#node.name: master000
+
+node.master: true
+node.data: true
+
+path.data: /datadisk/disk0
+
+#network.host: 10.0.1.4
+
+http.cors.enabled: true
+http.cors.allow-origin: "REPLACEME"
+
+#discovery.zen.ping.unicast.hosts: ["es-master-000","es-master-001","es-master-002"]
