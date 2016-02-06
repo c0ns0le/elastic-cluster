@@ -11,7 +11,7 @@ sudo aptitude -y install oracle-java8-installer
 wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-2.2.0.deb
 sudo dpkg -i elasticsearch-2.2.0.deb
 
-wget https://github.com/iremmats/elastic-cluster/blob/master/elasticsearch_master.yml
+wget https://raw.githubusercontent.com/iremmats/elastic-cluster/master/elasticsearch_master.yml
 sudo cp elasticsearch_master.yml /etc/elasticsearch/
 
 #enable on bootup
